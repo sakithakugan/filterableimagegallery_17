@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<!-- Design by foolishdeveloper.com-->
+<html lang="en">
+<head>
+  <title>filterable gallery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style media="screen">
+
+body{
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+*{
+  margin:0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+img{
+  max-width: 100%;
+  vertical-align: middle;
+}
+/*.gallery*/
+.gallery{
+  width: 100%;
+  display: block;
+  min-height: 100vh;
+  background-color: #2a2932;
+  padding: 100px 0;
+}
+.gallery .gallery-filter{
+  padding: 0 15px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.gallery .gallery-filter .filter-item{
+  color: #ffffff;
+  font-size: 17px;
+  border: 2px solid white;
+  text-transform: uppercase;
+  display: inline-block;
+  border-radius: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+  padding: 8px 20px 8px 20px;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+}
+.gallery .gallery-filter .filter-item.active{
+  color: rgb(238, 241, 199);
+  border-color : #58b611;
+  background: #e4da17;
+}
+.gallery .gallery-item{
+  width: calc(100% / 3);
+  padding: 15px;
+
+}
+.gallery .gallery-item-inner img{
+  width: 100%;
+  border: 3px solid #090909;
+}
+.gallery .gallery-item.show{
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.gallery .gallery-item.hide{
+  display: none;
+}
+
+/*responsive*/
+@media(max-width: 491px){
+  .gallery .gallery-item{
+    width: 50%;
+  }
+}
+@media(max-width: 467px){
+    .gallery .gallery-item{
+    width: 100%;
+  }
+  .gallery .gallery-filter .filter-item{
+    margin-bottom: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<section class="gallery">
+  <div class="container">
+    <div class="row">
+      <div class="gallery-filter">
+        <span class="filter-item active" data-filter="all">all</span>
+        <span class="filter-item" data-filter="watch">Watch</span>
+        <span class="filter-item" data-filter="headphone">headphone</span>
+        <span class="filter-item" data-filter="television">television</span>
+        <span class="filter-item" data-filter="phone">Phone</span>
+        <span class="filter-item" data-filter="camera">camera</span>
+      </div>
+    </div>
+    <div class="row">
+      <!-- gallery item start -->
+      <div class="gallery-item television">
+        <div class="gallery-item-inner">
+          <img src="https://i0.wp.com/marketbusinessnews.com/wp-content/uploads/2015/12/IoT_TV_Main_2-min.jpg?resize=612%2C408" alt="shoe">
+        </div>
+      </div>
+      <!-- gallery item end -->
+      <!-- gallery item start -->
+      <div class="gallery-item headphone">
+        <div class="gallery-item-inner">
+          <img src="https://media.istockphoto.com/photos/young-girl-dancing-to-the-music-picture-id685111998?k=20&m=685111998&s=612x612&w=0&h=tosPRJJK53SzoSNQcBFne5O0bGkDu3Vv7pWlBFwPics=" alt="headphone">
+        </div>
+      </div>
+      <!-- gallery item end -->
+      <!-- gallery item start -->
+      <div class="gallery-item camera">
+        <div class="gallery-item-inner">
+          <img src="https://i0.wp.com/360rumors.com/wp-content/uploads/2019/03/evo-comparison-paint.jpg?w=612&ssl=1" alt="camera">
+        </div>
+      </div>
+      <!-- gallery item end -->
+      <!-- gallery item start -->
+      <div class="gallery-item headphone">
+        <div class="gallery-item-inner">
+          <img src="https://katydisasterresponse.files.wordpress.com/2020/03/ask-nurse.jpg" alt="headphone">
+        </div>
+      </div>
+      <!-- gallery item end -->
+      <!-- gallery item start -->
+      <div class="gallery-item camera">
+        <div class="gallery-item-inner">
+          <img src="https://i0.wp.com/whenwomeninspire.com/wp-content/uploads/2018/05/camera-time.jpg?fit=612%2C408&ssl=1" alt="camera">
+        </div>
+      </div>
+      <!-- gallery item end -->
+            <div class="gallery-item television">
+              <div class="gallery-item-inner">
+                <img src="https://media.gettyimages.com/photos/samsung-qled-8k-televisions-are-pictured-during-the-2nd-china-import-picture-id1186105033?s=612x612" alt="television">
+              </div>
+            </div>
+
+      <div class="gallery-item phone">
+        <div class="gallery-item-inner">
+          <img src="https://img.global.news.samsung.com/uk/wp-content/uploads/2018/10/Galaxy-A0-Press-Release_main_1-612x408.jpg" alt="phone">
+        </div>
+      </div>
+
+      <div class="gallery-item watch">
+        <div class="gallery-item-inner">
+          <img src="https://i0.wp.com/whenwomeninspire.com/wp-content/uploads/2017/09/gadget-gift-man.jpeg?fit=612%2C408&ssl=1" alt="watch">
+        </div>
+      </div>
+
+      <!-- gallery item start -->
+      <div class="gallery-item phone">
+        <div class="gallery-item-inner">
+          <img src="https://img.global.news.samsung.com/uk/wp-content/uploads/2019/02/Samsung-Galaxy-Fold_3-612x408.jpg" alt="phone">
+        </div>
+      </div>
+      <!-- gallery item end -->
+    </div>
+  </div>
+</section>
+
+<script>
+
+
+ const filterContainer = document.querySelector(".gallery-filter"),
+ galleryItems = document.querySelectorAll(".gallery-item");
+
+ filterContainer.addEventListener("click", (event) =>{
+   if(event.target.classList.contains("filter-item")){
+     // deactivate existing active 'filter-item'
+     filterContainer.querySelector(".active").classList.remove("active");
+     // activate new 'filter-item'
+     event.target.classList.add("active");
+     const filterValue = event.target.getAttribute("data-filter");
+     galleryItems.forEach((item) =>{
+       if(item.classList.contains(filterValue) || filterValue === 'all'){
+        item.classList.remove("hide");
+         item.classList.add("show");
+       }
+       else{
+        item.classList.remove("show");
+        item.classList.add("hide");
+       }
+     });
+   }
+ });
+</script>
+</body>
+</html>
+
